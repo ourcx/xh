@@ -20,10 +20,10 @@ $(function(){
     
     // 一些计算所需的变量
     var seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0
-    var musicImgsData = ['musicplayer-master/img/bg.png','musicplayer-master/img/bg1.png','musicplayer-master/img/bg2.png']    // 图片地址数组
+    var musicImgsData = ['musicPlayer-master/img/bg.png','musicPlayer-master/img/bg1.png','musicPlayer-master/img/bg2.png']    // 图片地址数组
     var musicNameData = ['ウヲアイニ','雪融','我不难过'];                   // 歌曲名数组
     var artistNameData = ['岩井俊二','早見沙織','孙燕姿']            // 创作歌手数组
-    var musicUrls=['musicplayer-master/mp3/music1.mp3','musicplayer-master/mp3/music2.mp3','musicplayer-master/mp3/music3.mp3'];// 歌曲mp3数组
+    var musicUrls=['musicPlayer-master/mp3/music1.mp3','musicPlayer-master/mp3/music2.mp3','musicPlayer-master/mp3/music3.mp3'];// 歌曲mp3数组
     var currIndex = -1;              // 当前播放索引
     
     var buffInterval = null          // 初始化定时器 判断是否需要缓冲
