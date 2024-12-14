@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小海的博客</title>
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="demo.css" />
+  <link rel="stylesheet" type="text/css" href="loaders.css" />
+  <link rel="stylesheet" href="musicPlayer-master/font/iconfont.css">
+  <link rel="stylesheet" href="musicPlayer-master/css/style.css">
+
+  <!--笔记-->
+  <link rel="stylesheet" href="pdf/css/pdfh5.css" />
+
+</head>
+
+
+
+<style>
+  #demo{
+    width: 5rem;
+    height: 5rem;
+    top: 21.99rem;
+    left: 3rem;
+  }/*笔记事件*/
+
+
+
+</style>
+
+
+<!--雪花特效-->
+
+<style type="text/css">
+  .snow-container {
+    position: fixed;
+    top: 0;
+    left: 0.5rem;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100001;
+  }
+</style>
+
+
+
+
+<body background="CG8.png">
+    <!--鼠标事件的引入-->
+  <script src="xxx.js"></script>
+  <!--菜单栏-->
+  <div class="snow-container"></div>
+
+  <div class="main-list">
+    <ul class="list">
+      <li><a data-id="1" style="font-size: 0.11rem;">首页</a></li>
+      <li><a data-id="2" style="font-size: 0.11rem;">动态</a></li>
+      <li><a data-id="3" style="font-size: 0.11rem;">文章</a></li>
+      <li><a data-id="4" style="font-size: 0.11rem;">日常</a></li>
+      <li><a data-id="5" style="font-size: 0.11rem;">笔记</a></li>
+      <li><a data-id="6" style="font-size: 0.11rem;">留言</a></li>
+      <li><a href="https://space.bilibili.com/515482775?spm_id_from=333.1007.0.0" style="font-size: 0.11rem;">作者</a></li>
+      <li id=bottom><a href="" style="font-size: 0.11rem;">关于</a></li>
+    </ul>
+  </div>
+
+
+  <!-- Swiper首页滑动效果的html -->
+  <div class="swiper-main">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="http://www.98qy.com/sjbz/api.php"></div>
+        <div class="swiper-slide"><img src="https://t.mwm.moe/fj"></div>
+        <div class="swiper-slide"><img src="https://www.dmoe.cc/random.php"></div>
+        <div class="swiper-slide"><img src="https://cloud.qqshabi.cn/api/images/api.php"></div>
+        <div class="swiper-slide"><img src="images/CG4.png"></div>
+        <div class="swiper-slide"><img src="images/CG.png"></div>
+        <div class="swiper-slide"><img src="images/CG12.png"></div>
+        <div class="swiper-slide"><img src="https://api.paugram.com/wallpaper/"></div>
+        <div class="swiper-slide"><img src="https://imgapi.xl0408.top/index.php"></div>
+        <div class="swiper-slide"><img src="https://t.mwm.moe/pc"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <!-- Swiper JS -->
+
+
+  <!--文字进入-->
+  <div class="arrow-container">
+    <div class="arrow-down"></div>
+  </div>
+
+
+
+  <div class="loader">
+
+
+    <div class="loader-inner ball-clip-rotate-multiple" style="top: 5rem;left: 2.15rem;">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="loader-inner ball-clip-rotate-multiple" style="top: 5rem;left: 5.35rem;">
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+  <!--文字介绍网站-->
+
+  <div class="word">
+
+    <div class="main-word">
+      <li style="list-style-type: none;text-align: center;">
+        <h2 style="font-size: 0.15rem;">公告</h2>
+      </li>
+      <ol class="words" ,id="new">
+        <li><a><span style="font-size: 0.11rem;">2024/11/14</span>
+
+            <h4 style="font-size: 0.11rem;">博客正在搭建中</h4>
+          </a></li>
+        <li><a><span style="font-size: 0.11rem;">2025/2/31</span>
+
+            <h4 style="font-size: 0.11rem;">博客搭建完成</h4>
+          </a></li>
+        <li><a><span style="font-size: 0.11rem;">2025/2/31</span>
+
+            <h4 style="font-size: 0.11rem;">作者微信</h4>
+          </a></li>
+        <li><a><span style="font-size: 0.11rem;">2025/6/10</span>
+
+            <h4 style="font-size: 0.11rem;"> 预祝高考顺利</h4>
+          </a></li>
+      </ol>
+    </div>
+  </div>
+  <!--引入一个头像使用：-->
+  <span id="element"></span>
+  <div class="writer">
+    <img src="writer.jpg" class="tuoxiang">
+    <h4 style="text-align: center;font-size: 0.11rem;">小海</h4>
+    <h5 style="text-align: center;font-size: 0.09rem;">Ciallo～(∠・ω[ )⌒★</h5>
+  </div>
+
+
+
+  <!--
+  情书模块
+  -->
+  <div class="love">
+    <div class="love-2d">
+      <span class="mo-textarea">
+        <h3 style="text-align: center;font-size: 0.15rem;">情书</h3>
+        <p><textarea name="loves"
+            id="love" style="font-size: 0.11rem;">讨厌讨讨讨讨厌讨讨讨厌你你厌厌你你厌厌厌讨厌讨厌厌讨讨讨厌厌你厌讨你厌你你讨你厌讨讨厌厌厌厌你厌讨讨讨厌厌讨讨厌讨厌你厌讨厌讨讨讨讨厌讨厌厌厌讨厌讨讨你厌厌讨讨你讨你讨讨你厌你讨讨讨厌厌讨讨讨厌厌你讨讨你讨讨厌你厌你厌厌厌你你你厌你厌讨厌讨讨厌讨讨厌厌你厌讨厌厌讨你你厌你讨讨厌厌厌讨你讨厌厌讨你你你你讨讨厌讨讨你厌讨讨你厌你厌讨讨厌厌厌厌厌你你讨厌厌厌厌你你厌讨讨讨你厌讨你讨讨厌讨你厌厌厌讨讨讨讨你讨讨厌讨厌厌厌讨你你厌厌厌你厌讨厌厌厌厌讨讨厌讨讨厌厌厌厌讨你厌厌厌讨讨厌厌讨讨讨厌你你厌厌讨厌你厌厌讨厌讨讨厌厌讨讨你讨讨厌讨厌讨讨讨厌你你你你你厌讨厌厌你你厌厌你讨讨厌厌厌讨你讨讨讨讨讨厌讨讨讨你你讨你厌厌讨讨你讨讨讨你厌讨厌你厌厌你你讨讨讨厌讨讨讨你厌讨你讨讨厌你厌厌讨讨厌厌讨讨你讨讨厌你厌厌讨讨你厌厌厌讨你厌讨厌讨讨厌讨讨讨你你讨讨你你厌厌你你厌厌讨讨讨讨讨厌你讨你厌厌讨讨讨厌讨你你你厌厌讨你讨讨讨讨厌你你你讨厌讨厌讨讨厌讨你厌厌厌讨讨厌讨你厌你厌讨讨厌厌厌你厌你厌你讨讨你讨讨厌厌你厌讨你厌讨讨厌厌讨你讨讨讨讨讨厌讨讨讨厌讨你讨讨你讨讨厌讨讨你讨你你讨你讨厌你厌你你厌你厌讨讨厌你厌厌讨你你厌你你你你讨厌厌讨讨讨厌讨厌讨讨讨讨讨讨讨你讨厌讨你讨讨厌讨讨讨你你讨讨讨你讨你你你讨厌讨厌讨讨厌讨你你你讨你讨厌你讨你厌讨讨厌厌讨讨你你厌厌讨厌你厌讨你厌讨讨厌厌厌厌讨厌讨厌你讨讨厌你厌厌厌你你你厌厌厌厌你厌讨你讨讨讨厌你厌讨你讨厌你讨讨厌厌厌你厌你你你厌厌讨讨你讨你讨厌讨你你你你讨讨厌讨讨讨厌讨厌你讨你你厌讨讨厌你讨讨厌厌厌你你讨你厌厌讨讨你讨讨讨厌讨讨你你厌讨厌厌讨你厌你你讨讨厌讨厌讨你厌厌厌讨讨你讨讨你讨讨厌厌讨讨厌厌你厌你厌你厌厌你你讨你厌厌厌讨厌厌讨讨厌讨你讨厌厌讨厌讨你你讨讨厌讨你你你厌讨厌讨讨讨讨厌厌厌你你厌厌你厌你讨你厌你你讨厌你讨讨厌厌厌你你讨你讨你讨讨讨厌讨讨厌厌厌厌你讨你你厌你厌你厌讨讨厌讨讨厌你讨你厌讨你你厌厌讨讨厌讨厌厌讨你厌厌讨讨讨厌厌你厌讨你讨讨你厌厌讨讨你讨你讨你厌讨讨厌厌你厌你讨讨讨厌讨讨讨厌讨讨讨讨厌讨讨讨厌讨你厌厌你厌讨讨讨厌讨厌讨厌讨讨厌厌你厌你厌讨讨你你讨讨讨厌你厌你你厌讨你你你厌讨讨厌讨讨讨厌厌讨讨厌讨讨讨讨厌讨讨讨你讨讨讨讨你厌讨讨厌厌厌厌你你讨讨厌讨讨你厌厌讨讨你讨讨你你讨你厌讨你讨厌讨讨讨厌讨讨讨厌讨你讨厌你讨讨厌讨讨讨厌讨你你你厌厌你讨讨你厌厌厌讨讨厌讨你厌讨你厌讨厌你讨讨讨讨厌讨厌厌你厌讨你讨讨厌讨讨厌厌厌你你厌讨你你厌厌讨讨厌讨讨厌你厌你讨厌讨你讨讨厌讨讨讨厌你讨你厌讨厌厌讨讨讨厌你厌厌你厌厌厌厌讨讨讨讨厌你厌厌讨讨讨你讨讨厌讨你你你厌厌你你你厌你厌你厌厌你厌讨讨厌讨你讨厌你厌讨厌讨讨你讨讨讨讨讨厌讨讨厌厌讨你厌厌你讨讨厌讨讨讨厌讨你你厌讨讨讨你你厌你厌讨讨厌你你你厌你你厌厌你你厌厌讨讨厌厌你讨讨讨厌讨厌厌你你讨讨讨厌讨厌讨厌厌讨你讨厌厌讨讨厌讨你你你你讨你讨你你讨厌你讨你讨讨厌厌讨厌讨厌讨讨讨讨厌厌你讨讨你你讨讨讨讨你讨讨厌厌厌你厌你你讨厌讨你你你讨讨你讨你讨你你厌讨讨厌厌你厌你你讨讨厌讨讨你厌讨厌讨讨厌讨你厌讨厌讨厌你你厌厌厌讨你讨讨你厌讨讨厌你厌你厌厌你讨厌你讨讨厌你厌你厌厌你厌你你讨厌讨讨讨厌厌讨厌厌你你厌厌你你讨你讨你讨讨讨厌厌厌厌讨你你厌厌讨讨厌讨讨讨厌你你厌厌讨讨你讨你厌厌你厌讨厌你讨厌讨讨厌你厌厌讨你讨你厌厌讨厌讨讨讨讨厌讨你厌讨讨你讨讨厌你厌厌讨讨厌讨厌讨你你厌厌厌讨讨你你厌你讨讨厌你你讨你厌你讨你你讨讨讨厌讨讨讨你讨你你你讨讨讨讨讨讨厌讨讨讨你你你讨讨你讨你厌你你厌讨讨厌讨厌你你你讨讨厌讨厌你厌厌讨你讨厌讨讨厌讨讨讨厌你讨你你厌讨你厌讨讨讨厌讨讨厌你你厌你厌厌厌讨厌讨厌讨讨厌讨讨厌讨你讨讨厌讨你厌讨讨你你讨讨你厌讨讨讨讨厌讨你你你讨讨你厌讨你你你厌讨讨厌厌厌你厌你厌你厌讨厌厌讨你厌你讨讨讨厌讨厌厌讨你讨厌厌讨讨厌讨厌你讨厌讨你厌讨你讨讨你讨你厌讨讨厌讨厌厌厌厌讨你你讨讨讨讨你你厌讨讨讨讨你厌你你讨厌你讨讨讨厌你厌你厌你讨讨讨讨厌讨厌讨厌厌讨你讨厌厌讨讨厌厌你你厌厌你讨你厌厌厌讨讨厌讨讨讨厌讨你讨讨你厌讨讨讨讨厌厌你你厌厌你讨你你厌讨讨厌讨你厌你厌讨讨厌讨厌你厌厌讨讨厌讨讨讨厌讨你厌厌你厌讨你讨你你你讨厌讨讨厌讨厌厌厌讨讨讨讨厌讨讨厌讨讨讨你你讨你厌厌你讨讨厌讨讨讨厌你讨你厌厌讨你你你你讨讨厌你厌讨厌讨讨你厌你讨讨讨厌讨讨讨厌你讨你讨讨你讨讨厌讨讨讨厌讨你讨厌厌厌厌讨讨讨你厌讨讨厌讨厌你厌讨厌讨讨讨讨你讨讨你你厌讨你你厌厌讨厌你讨讨厌厌厌讨你厌讨你讨讨厌你厌厌你讨讨你厌厌讨你你厌厌讨讨厌厌讨讨讨你讨厌讨你讨讨厌讨你你你你讨讨厌讨你厌你你讨讨厌讨你讨厌厌你你你你厌厌你讨厌厌厌讨讨讨讨厌讨讨厌讨讨讨讨厌厌厌你厌你厌你你厌你厌你你讨讨厌讨讨厌讨厌厌讨厌讨你你厌讨讨讨厌你讨你你你讨你厌讨厌厌你厌你讨你讨讨厌讨讨讨厌讨讨讨讨厌讨厌你讨厌你讨厌讨讨你讨讨厌厌厌你你厌讨讨你你讨讨你讨讨厌讨厌厌讨你厌讨你厌厌讨你你厌你讨讨厌你厌厌你讨讨你厌讨讨讨你你你你讨讨讨厌厌讨讨你厌讨厌讨讨厌讨讨厌厌讨厌厌厌你厌厌你讨厌讨讨讨厌厌你你厌厌你厌你讨讨讨讨讨讨厌你讨你讨讨讨讨讨讨厌你厌你厌你厌你你厌你厌讨讨厌讨厌你讨厌你厌你讨讨厌讨讨讨厌讨讨讨你厌厌讨你你你厌讨讨厌讨厌厌厌讨你讨你厌讨讨你厌厌讨讨厌讨厌厌讨你厌讨你讨讨厌讨讨讨厌讨你厌厌讨你讨厌你讨讨厌讨厌你厌讨讨讨厌厌你讨讨厌你厌讨厌讨你讨讨厌你厌你你厌讨你讨讨厌讨你讨讨厌讨厌厌讨你你厌厌你你厌你厌你讨厌厌讨讨讨讨厌讨你你厌你厌厌厌讨厌讨你讨讨厌讨讨你厌你厌讨讨厌讨讨厌你厌讨厌讨讨你讨讨厌讨讨你厌讨你厌讨讨厌你厌你厌你厌厌讨讨厌你厌你厌厌厌讨讨讨讨你讨讨厌讨你厌厌厌厌厌讨讨讨厌你讨讨厌讨你你你你讨讨你讨讨厌厌厌你你厌厌你厌讨讨厌讨你讨讨厌厌厌你厌你厌你你你讨你讨讨你你厌你讨讨厌讨你厌讨厌讨厌讨讨厌讨厌厌讨你你讨讨讨你你讨讨讨讨你讨你讨你厌厌讨讨厌厌讨讨厌讨你厌讨你厌厌你讨讨厌讨你讨厌厌厌讨你你厌你你你厌厌讨厌你讨讨厌讨讨你厌你你讨讨厌厌厌你厌你厌你讨厌讨厌讨讨厌讨你厌讨讨厌厌你讨厌讨厌讨讨厌厌讨你讨你讨讨讨你厌讨厌厌你你讨讨厌讨讨厌讨讨厌讨你讨讨你讨讨厌讨厌你讨厌你你讨你你你讨厌讨讨讨讨厌讨你你厌你你讨你讨你厌讨厌讨你讨讨厌讨讨厌讨厌讨厌厌你厌厌讨厌你厌讨讨讨厌厌讨讨厌你厌讨你厌厌讨讨讨厌你讨讨你你讨讨厌讨厌讨讨厌讨厌你厌厌你讨你讨厌讨你讨讨厌讨你厌厌厌你厌厌你讨你你讨厌厌你你讨讨厌厌讨你讨你厌厌厌讨讨厌讨你厌厌厌讨讨讨你厌讨你讨讨厌厌厌你厌你你讨讨你讨讨厌厌你厌你厌你厌你你讨你厌你厌你你厌讨厌讨你讨讨你厌你厌你厌你厌讨厌你你厌你厌你厌你厌讨讨厌你讨厌你厌你厌你厌你厌讨厌厌讨你厌你厌你厌你讨你厌你厌讨讨厌讨你讨厌你讨讨讨厌讨你讨讨厌讨你厌讨厌讨讨厌讨你厌讨讨讨讨厌你厌厌讨你讨讨你你厌讨讨你你讨厌讨讨讨讨厌讨你你厌厌你厌你你讨你你讨讨厌厌厌讨你厌厌厌讨讨厌讨讨厌厌你厌讨厌讨你讨讨厌讨你讨厌你你讨厌讨讨你讨讨厌讨讨你你你你讨讨讨讨你你你厌讨讨厌你你你厌你讨厌你你厌你你讨讨厌讨厌厌讨你你厌你讨讨厌你你讨讨厌你你厌讨讨讨讨厌讨你厌讨讨厌厌讨讨你讨讨厌厌讨讨讨讨讨你厌讨厌厌讨你讨厌厌讨讨厌厌厌你厌你厌讨讨你你讨讨讨厌厌讨你讨讨讨讨讨厌厌你你厌你讨厌讨你讨你厌讨讨厌讨你厌厌厌讨你你厌厌你厌你你讨厌讨讨讨厌厌你厌讨厌讨厌讨厌厌你讨讨厌讨你厌你厌讨厌你你讨讨讨厌你厌讨厌厌你你讨你讨讨你讨讨讨你讨讨厌厌厌厌讨厌你你厌厌讨你厌厌讨讨讨厌讨讨厌你厌你厌你厌讨你厌你你讨讨你讨讨厌厌厌讨讨你讨讨厌讨你讨厌你你讨厌厌讨讨你讨讨厌讨讨你讨讨厌讨讨厌你厌厌讨讨你讨厌讨厌讨你你厌你讨讨厌你厌你你厌讨你讨你讨你你你你厌讨讨厌讨厌厌厌讨你你你你讨讨厌讨讨讨厌讨厌你厌讨厌你讨讨你讨讨讨讨厌你厌讨厌讨厌讨讨厌你厌厌你讨讨厌讨你你厌厌讨厌你厌你厌厌讨讨厌讨厌你厌你厌讨你讨讨讨厌讨讨你讨讨厌讨厌讨讨厌讨你讨讨讨讨你你你讨你厌你你讨讨厌讨讨厌厌厌你你你厌厌厌你厌你厌厌讨讨讨厌你讨厌讨厌讨讨厌讨讨讨厌讨你讨你你你你讨讨你讨厌你讨厌讨你讨讨厌讨你厌厌厌讨讨你厌你厌你讨厌讨讨讨讨厌讨你你你讨你厌厌厌讨讨厌讨你讨厌你你讨厌厌讨你厌讨你讨讨厌厌厌厌你讨厌讨你讨讨讨讨讨厌厌你讨讨你讨你厌讨讨讨你讨讨讨厌讨讨厌厌你你讨你你厌你厌厌厌讨讨厌你厌厌厌你厌你你讨你讨讨讨厌厌厌你厌讨你你讨讨讨讨你讨讨讨你讨讨厌讨你讨厌厌讨你你厌你讨你你厌厌讨你厌讨讨厌讨你你厌讨你厌讨厌讨讨厌讨讨你你厌厌厌你厌厌你你讨你讨讨厌你你讨讨讨厌讨你讨讨厌厌厌你厌你你讨讨你厌讨你你你你厌你厌讨讨厌讨你讨厌讨厌讨讨厌你讨讨你厌厌讨你讨讨你讨讨厌厌厌厌讨厌你你讨讨讨讨你讨讨厌讨讨厌你厌你厌讨讨讨厌讨讨讨讨厌厌你你你厌讨你你你厌厌讨讨你讨厌你讨讨你讨讨厌讨讨讨你厌你你讨厌你厌讨讨厌厌你厌厌你讨讨厌讨讨厌你厌你讨厌讨厌讨讨厌讨你你你你厌厌讨讨讨你厌你讨讨讨讨讨讨你讨你讨你厌你你讨讨厌厌讨讨讨你讨厌厌厌讨你你厌讨讨讨厌厌讨讨讨你讨讨你讨讨厌讨你厌厌讨你你你厌讨你厌讨你讨讨厌讨讨讨你讨厌厌你你厌讨讨厌厌厌讨厌厌讨讨厌讨讨讨讨讨讨厌你厌厌讨厌讨讨讨讨厌讨厌厌讨你你你讨厌讨你你厌厌讨讨厌讨厌你讨讨你你厌讨讨讨你讨厌讨你讨讨厌讨你厌你厌厌讨你你讨讨讨厌你厌厌讨讨厌讨讨讨讨厌讨讨讨厌讨你厌讨厌讨你厌你讨讨讨厌讨讨讨你厌讨你厌讨你你讨讨厌厌你讨讨厌你厌厌你厌厌你厌你讨讨讨厌讨讨厌你你厌讨讨你讨讨讨厌讨讨讨厌讨讨厌你厌厌厌你讨你讨讨厌讨讨讨厌你讨你讨厌你厌讨厌讨讨厌厌讨讨厌你厌讨你厌厌厌讨讨厌你厌厌你讨你厌厌讨讨讨厌厌厌你厌你你讨讨讨你讨讨厌讨厌厌厌讨你厌讨你你你厌厌你讨厌讨讨厌讨讨讨厌讨你你厌厌你讨讨你厌讨厌讨讨厌讨讨厌厌厌讨讨厌你厌你你厌讨你讨厌厌厌厌讨讨讨厌厌厌厌讨厌你讨厌讨讨厌讨你厌讨讨厌厌讨你厌厌你讨讨厌讨讨厌你厌讨你厌讨厌讨讨厌你厌你厌厌你讨讨厌讨你讨讨厌厌讨厌你你你讨讨讨你厌厌讨讨讨厌讨厌你厌厌讨讨厌厌讨你讨你厌讨讨厌讨厌你讨厌讨讨你讨讨厌厌讨讨讨厌你讨你讨讨你厌你你讨讨厌厌厌讨厌你讨你你你厌厌厌厌讨你你你你讨讨厌讨厌讨讨讨讨你讨讨你讨厌讨讨讨讨厌你厌你你讨讨讨你你讨你你厌你你厌你讨讨厌讨讨厌你讨你厌你厌讨讨你讨讨厌讨讨讨你你厌讨讨你你讨讨厌你讨讨厌讨你你你讨讨你讨讨厌讨厌讨厌讨讨你讨讨讨厌讨厌厌厌厌厌讨讨厌厌你讨讨厌讨讨讨厌厌厌讨你讨厌厌讨讨厌厌你讨讨你你讨厌讨厌讨讨厌讨厌你讨厌你讨讨你厌讨你厌厌你你讨厌讨讨厌厌你讨你厌讨你讨讨厌讨讨你厌讨讨厌你厌讨讨厌你厌讨讨你讨讨厌讨讨你你厌讨讨厌讨你厌你厌讨讨厌讨厌厌讨讨厌厌你讨讨厌讨厌你厌讨厌讨你讨厌讨讨讨厌讨讨讨厌你厌厌厌讨你你厌讨讨讨厌讨你讨你你你讨讨讨讨你讨讨厌讨厌讨你讨讨厌讨厌你讨你你厌讨厌你厌厌讨讨你讨讨讨厌讨你厌厌厌厌讨你厌厌讨讨讨厌讨你讨厌厌你厌讨你你厌讨厌你你讨讨厌讨讨讨厌讨厌讨讨厌厌讨讨讨厌你讨你讨厌讨厌讨讨厌厌厌讨厌你讨你你厌讨你你厌厌讨讨厌厌讨你厌你厌厌讨你你你厌讨讨厌讨讨厌你厌你讨你你你讨讨讨厌你你讨你厌你讨讨讨厌讨讨厌讨你讨讨厌讨你讨讨厌讨讨讨厌你讨你厌厌讨你厌你讨讨讨厌讨讨讨厌讨你你厌讨你厌厌厌厌讨厌讨讨厌讨讨讨你厌你讨讨讨厌你厌你厌你讨厌厌厌厌你讨你讨讨讨你讨你你讨讨厌厌厌讨讨厌厌厌厌讨厌讨你讨讨厌讨你厌讨讨讨厌厌你你厌厌厌厌你你厌讨厌讨讨厌厌你讨你厌你厌你你厌讨讨厌讨厌讨你厌厌讨讨你讨厌讨你厌讨讨厌你讨厌讨你讨讨厌讨你厌你厌厌你讨你讨讨讨厌讨你讨讨你厌讨你厌厌你讨厌讨讨讨厌你厌你厌厌讨讨你讨讨讨你讨你厌你厌你你讨讨讨厌讨厌讨你讨讨讨厌讨讨讨讨厌你你厌厌你你讨讨你厌厌讨厌厌厌厌讨厌你你厌厌厌你你讨你你厌厌你你讨讨你讨讨讨讨厌你你厌讨厌你厌你你厌厌讨讨厌讨讨厌讨你你你讨讨讨厌讨讨讨厌你讨厌讨你厌讨厌讨讨厌讨你厌厌厌讨讨厌讨厌讨讨厌厌厌你厌你你讨讨你讨你你厌厌你你讨讨讨厌讨讨厌你讨你你厌厌厌讨你讨讨厌讨你讨讨厌厌讨讨讨你讨讨你厌讨讨你你讨讨讨你讨讨厌讨讨讨厌厌厌讨讨你讨讨厌讨你你讨讨讨讨厌厌讨厌你讨厌你讨你你你讨你厌你讨讨厌讨讨厌厌厌讨厌你你你讨讨厌厌厌你厌你厌厌讨讨讨你厌讨讨厌讨你厌厌厌你讨你你厌厌你厌厌讨讨厌厌厌你讨你厌你你讨讨厌厌厌你厌你厌你你厌讨你厌你厌你厌你讨讨厌讨你厌讨你厌厌讨讨讨厌讨你厌讨讨厌讨你厌讨厌讨讨厌你厌你厌厌你厌讨厌讨你讨讨厌厌你讨你厌讨讨厌你厌讨讨厌你厌讨你讨讨讨厌讨讨讨你厌讨厌讨讨厌讨你厌讨讨讨讨讨你厌讨讨讨讨厌讨讨你厌厌你你你厌厌讨讨你讨讨讨讨厌讨你讨讨厌讨厌厌讨你你厌厌讨讨你讨讨厌厌讨厌讨讨厌你讨厌你你厌你你你你讨厌讨厌讨讨厌讨讨你厌厌厌讨讨厌讨讨讨厌讨你厌你厌讨你厌厌厌厌讨你讨讨厌讨讨厌你厌你你厌厌厌讨讨厌你讨讨讨厌讨你你你厌讨讨厌厌厌你厌你厌讨厌厌你讨讨厌你你你厌讨厌讨你厌讨你厌讨讨厌厌你讨讨你讨讨厌讨讨讨厌讨厌你讨你厌讨你讨厌你讨讨厌厌讨厌厌你你讨讨你讨讨厌厌你你厌厌讨你你厌你你厌讨讨你厌讨你讨厌讨讨厌讨厌讨你讨厌讨讨讨厌厌厌你厌你你讨厌讨厌讨讨厌讨你你你厌厌讨讨讨厌讨厌讨讨厌你你厌你讨讨讨你讨你厌你讨讨讨厌讨你你你你讨讨厌讨讨讨讨厌讨讨你你你你讨讨你厌讨讨你讨讨讨讨你讨你厌厌讨讨讨厌厌讨讨你讨讨讨讨讨你讨讨讨讨厌讨你讨讨厌讨讨讨厌讨你厌讨厌你厌讨厌讨厌厌讨讨厌你你厌厌讨你厌你讨讨讨厌厌厌你厌你厌你你你厌你你你厌讨你讨厌讨讨厌讨厌你厌讨你讨厌讨讨讨厌讨厌你讨你讨讨讨讨你讨讨厌讨你厌你你讨讨厌讨讨讨厌讨厌你厌讨你厌讨讨讨讨厌讨讨讨厌厌讨厌你厌你你你厌讨讨讨厌讨你你你讨厌讨你讨讨厌你厌你厌你厌厌你厌厌讨你讨厌讨讨讨厌厌厌你厌你讨厌讨厌讨讨厌讨你你你厌讨厌你讨厌讨讨讨讨厌讨厌你讨讨你讨厌厌你你讨厌你你厌讨讨讨你讨讨厌厌厌厌厌你你讨讨你你你厌厌讨厌你你讨讨讨讨讨厌讨你讨你讨你你厌厌厌讨讨厌讨厌你讨讨你讨讨厌讨讨讨厌你厌讨厌你讨你厌你讨讨讨厌讨你厌厌厌讨讨你讨讨讨讨你讨厌厌讨厌讨讨讨讨厌讨你你你你讨讨讨厌你厌讨你讨讨厌讨讨厌讨讨讨厌讨你厌讨讨讨讨厌讨讨讨厌厌讨厌厌讨你讨厌讨讨讨厌讨你厌你厌你厌厌讨你你你讨讨讨厌你你讨讨厌你你厌厌讨讨你你讨厌厌讨讨厌你讨厌讨厌讨讨厌厌厌你厌你你讨厌厌厌讨讨厌你讨讨讨厌讨你你你厌厌讨你讨厌厌讨讨厌讨厌你讨讨你厌厌讨厌讨厌讨讨讨厌讨讨讨厌你你讨讨讨讨你讨厌厌你你厌你厌讨你厌讨厌讨讨讨厌厌讨厌讨厌讨讨厌你讨你厌讨讨讨你讨厌厌你讨讨讨你讨讨厌厌你讨讨讨厌你厌讨你讨你厌讨讨厌讨讨你你厌你厌讨你讨你讨讨讨厌讨讨你你厌你你厌厌讨讨你讨厌你你你厌讨讨讨厌你厌讨讨讨讨厌厌讨你厌厌讨讨讨厌讨你你你厌厌讨厌你厌厌讨你厌讨讨讨厌讨讨厌讨讨讨你讨讨厌你讨讨讨讨厌厌你讨讨厌讨你讨讨厌讨厌厌讨你你你讨厌你你讨厌你你厌讨厌你厌讨厌你你你讨讨厌你讨讨讨讨厌讨你讨讨厌你厌厌你讨讨厌你厌你厌讨你讨厌厌讨讨厌讨厌讨讨厌讨你厌讨讨讨讨厌厌讨厌厌你你厌厌讨你讨厌厌讨讨厌厌厌你厌你讨你你厌厌讨讨厌你讨讨你讨讨厌讨你厌厌厌讨讨讨讨厌厌讨你讨厌你讨讨厌厌厌你厌你厌讨你讨厌你讨讨厌厌你讨讨你你你厌讨讨厌你讨厌讨你讨讨厌讨你讨讨你讨讨厌讨厌你讨厌你你厌讨你讨你你厌厌厌厌你讨讨厌厌你你你厌厌讨讨你讨讨讨你厌讨你你你讨你你讨讨讨厌你讨厌讨你你讨厌讨讨厌厌厌你厌你厌厌你厌厌你讨你厌讨讨厌你厌你厌讨厌讨讨讨讨厌厌你讨你厌讨讨你讨厌讨你讨讨厌讨讨讨厌你讨你厌你讨你讨讨讨讨厌厌讨讨厌讨你厌厌你你讨你讨厌讨讨厌讨你你讨你讨讨厌讨讨厌厌你厌讨厌讨厌讨讨厌讨厌你讨厌你讨厌讨厌讨厌讨讨厌讨你厌厌厌讨讨厌讨讨你讨讨厌讨你讨讨厌厌你讨你你讨你厌讨你厌厌讨讨讨厌讨讨讨你厌讨讨你你讨你你讨讨讨厌厌厌厌你厌厌你讨你你讨讨厌厌你你厌讨讨讨讨讨你讨讨讨厌厌讨讨讨厌厌讨讨厌讨讨厌你讨讨厌讨你讨讨厌讨你讨你你你你厌你讨你厌厌你你讨讨讨讨厌讨讨讨你讨你厌厌你厌你厌讨讨厌讨讨讨讨讨你讨讨厌讨你你你你讨讨讨讨厌讨讨你你厌讨讨厌厌你厌厌讨讨讨讨讨讨厌讨厌厌厌你你厌讨厌厌讨厌厌你厌讨讨厌讨厌厌讨讨你讨你讨讨厌讨讨讨你讨厌厌讨你你厌讨讨讨厌厌讨讨讨你你厌讨你讨厌厌厌厌厌讨讨厌厌讨讨讨你讨讨厌厌讨讨讨厌你厌讨厌讨讨你讨讨厌讨讨厌厌你你你你你你讨你厌厌厌厌你讨讨讨厌你厌你讨你你你讨讨讨厌你讨你厌讨你讨讨厌讨讨厌你讨讨讨讨厌讨你讨讨厌厌厌你讨厌讨你讨厌厌讨讨厌你你讨讨厌讨你你你厌你你厌你讨厌你你厌讨讨讨讨厌厌讨你厌你厌讨讨厌厌你讨你讨讨你厌你厌厌讨厌厌厌讨讨厌讨讨厌讨你厌讨你你你讨厌讨你讨讨厌讨你你你厌讨讨讨厌你厌讨厌讨讨厌厌你讨你厌厌厌厌你你讨讨厌你厌你讨厌讨你讨讨厌讨厌厌厌讨你你厌讨你厌厌厌讨讨厌讨讨厌你讨你厌你讨你厌你你厌讨厌讨讨厌厌讨厌你厌厌讨讨你讨厌你讨厌讨你讨讨厌讨讨厌厌你你你你讨你厌厌讨讨讨厌讨讨厌你厌你你你你厌厌你厌厌你厌厌厌讨讨厌你你你厌你讨讨厌你你厌讨讨讨厌你你你你讨讨你讨厌讨讨厌讨你讨讨厌讨你厌厌厌讨讨厌讨厌讨讨讨讨厌讨讨讨厌厌你厌讨厌厌讨你厌你讨讨讨厌讨讨讨厌讨厌厌讨讨讨你厌讨讨厌厌你讨讨厌厌你厌讨讨你你讨讨讨厌你厌你你你厌讨讨你讨你讨厌讨讨讨厌讨你讨你厌你厌讨讨厌讨讨讨厌厌厌厌厌厌讨讨厌你你讨讨厌你讨你你你讨你厌厌厌讨讨厌你厌你厌厌厌讨讨你厌你厌讨讨厌讨你厌讨厌讨讨你讨你你你你你厌你讨讨厌讨你讨你讨讨讨讨你讨你厌讨你厌你讨讨讨厌厌厌你你厌讨讨你厌讨你厌你厌你你你讨讨厌厌厌讨你厌讨厌讨讨厌你厌你厌厌你厌你你厌你你你你讨厌厌讨讨讨厌讨讨讨你讨讨厌讨讨你厌你讨讨厌厌厌厌讨你讨厌厌讨讨厌你讨厌厌你厌厌厌你讨厌讨讨讨你厌讨讨讨厌你厌讨你讨讨厌厌讨你你厌厌讨厌你厌厌厌讨讨讨厌厌厌你厌厌厌讨厌讨讨讨厌厌你你厌讨你厌厌你讨讨厌厌你你厌厌你你厌讨讨你厌你讨讨厌讨讨你讨讨厌厌讨你讨厌厌讨你厌厌讨你厌厌你讨讨厌讨讨厌厌你厌你你厌你厌你你讨厌厌厌讨讨厌厌厌你你讨你讨厌厌讨厌你厌讨你你厌你讨讨厌讨讨你厌厌厌讨厌你讨你讨讨厌厌讨厌你讨讨你厌厌厌讨讨厌讨厌你厌讨厌厌讨厌讨厌讨讨厌讨你你你你讨讨厌你讨讨讨讨你讨你你厌讨你讨你讨讨讨厌讨你厌厌厌讨厌讨你你你厌讨讨厌讨厌讨讨讨厌厌你厌你你讨厌厌讨讨厌厌讨厌厌讨讨你讨讨厌讨讨讨你厌你你你厌讨你你你厌讨讨厌你厌你厌讨你讨你厌讨讨厌讨厌讨讨厌讨你讨你讨讨讨厌厌讨厌厌你你厌厌讨讨讨讨厌讨讨厌讨讨讨你你讨你你厌厌讨讨厌你你讨你你你厌你厌讨讨讨厌你讨讨厌厌讨讨你厌讨讨讨厌厌厌厌你厌厌你厌讨讨讨你讨讨讨厌厌厌厌你你讨厌你厌你你讨你厌你厌厌你厌厌你讨厌你讨讨厌你厌你厌厌厌讨讨厌讨你讨讨厌讨你你你你讨讨讨讨讨厌你讨你讨讨你讨讨厌讨厌你厌厌讨你讨你你你厌讨讨讨厌你你讨讨讨讨厌厌你厌讨厌厌你厌讨厌讨讨讨厌讨你讨你厌厌讨讨讨厌你讨讨你你厌厌你讨讨讨讨你讨讨厌讨厌讨讨讨讨厌你你厌你你厌讨厌厌厌讨你讨你你讨讨厌厌讨讨讨厌厌你厌厌你讨讨厌讨讨厌你讨厌讨厌讨你讨你你讨讨厌讨讨你讨你厌你讨讨讨讨厌你你你讨厌讨你讨讨厌厌厌你厌你厌你厌你你厌讨讨你你厌你厌你讨讨厌你讨你你厌你讨讨厌你讨你你讨厌讨讨厌你讨厌讨你讨讨厌讨厌厌讨你你你讨讨你厌厌你讨讨厌讨讨厌厌你厌讨你你厌厌厌讨你讨讨讨你讨讨厌厌讨你厌讨厌讨讨厌讨厌讨厌你你讨讨你厌你厌讨讨厌讨你你厌你讨讨厌厌讨你讨厌厌讨讨厌讨讨厌你厌厌讨你你厌厌讨讨厌讨你你你你你讨厌厌讨讨讨厌你厌讨厌讨你讨讨厌你厌厌讨讨厌你你厌讨你讨你厌讨讨厌讨你厌厌厌讨你你厌讨讨讨讨你讨你厌讨讨厌你厌讨你厌厌厌讨讨厌你你厌厌厌厌厌讨你你你厌讨讨厌厌厌厌你厌讨厌你厌厌厌讨厌讨讨讨厌厌厌厌你厌讨你厌厌你讨讨厌你讨你你厌你厌你你讨厌你你厌讨你讨你厌你你讨讨你讨讨厌厌厌你厌讨你你厌讨讨讨厌厌厌厌你厌讨你讨讨讨讨你讨厌你厌厌厌厌你讨厌讨讨厌你厌讨厌你讨你讨讨厌讨你讨讨厌厌讨你讨厌讨讨讨厌讨厌厌讨你你讨你讨讨讨讨你你讨讨厌你你你你你厌厌讨讨厌厌你讨厌讨讨厌厌厌厌讨厌厌讨你讨讨厌厌厌讨讨厌厌厌厌厌你你讨讨讨厌厌讨你你厌厌讨讨厌讨你你你厌厌厌讨你你讨你讨讨厌讨你厌讨讨讨你厌厌厌讨讨厌你你厌你讨厌讨厌你厌讨讨厌讨你讨讨厌厌厌厌你厌你你讨厌你你你讨厌你厌你你讨厌你讨讨厌厌厌你厌厌厌讨讨讨厌讨讨讨厌厌厌厌你讨厌你你讨你讨厌讨讨厌厌讨讨讨厌讨讨讨厌讨你厌厌厌讨你厌你你讨讨厌讨厌讨讨讨厌你你厌讨厌厌你你厌讨厌讨讨厌厌讨你讨你你厌你你你厌讨讨厌讨讨讨你厌讨你你厌厌厌你你讨讨厌讨讨讨你你你厌讨讨厌厌你你你讨讨讨你你厌</textarea>
+        </p>
+        <!--致我的女朋友，一个可爱的笨比-->
+      </span>
+    </div>
+  </div>
+
+  <!--高德地图-->
+
+
+  <div id="container"></div>
+
+
+  <!--音乐播放，在最底下-->
+  <div id="player">
+    <!-- 歌曲信息模块 -->
+    <div id="player-content1">
+      <!-- 歌曲名 -->
+      <div class="music-name"></div>
+      <!-- 歌手名 -->
+      <div class="artist-name"></div>
+      <!-- 歌曲时间 -->
+      <div class="time">
+        <!-- 当前播放的时间 -->
+        <div class="current-time"></div>
+        <!-- 歌曲总时长 -->
+        <div class="total-time"></div>
+      </div>
+      <!-- 进度条 -->
+      <div id="s-area">
+        <!-- 鼠标移动到进度条上，显示的时间信息 -->
+        <div id="ins-time"></div>
+        <!-- 鼠标移动到进度条上，进度条变暗部分-->
+        <div id="s-hover"></div>
+        <!-- 表示当前歌曲播放进度的蓝色进度条 -->
+        <div id="seek-bar"></div>
+      </div>
+    </div>
+
+    <!-- 控制模块 -->
+    <div id="player-content2">
+      <!-- 左侧歌曲封面旋转模块 -->
+      <div class="music-imgs">
+        <!-- 封面图 -->
+        <div class="img"></div>
+        <!-- 歌曲缓冲时的提示文字 -->
+        <div id="buffer-box">缓冲…</div>
+      </div>
+      <!-- 右侧歌曲操作模块 -->
+      <div class="player-controls">
+        <!-- 上一首按钮 -->
+        <div class="btn prev iconfont">&#xe603;</div>
+        <!-- 暂停/播放 按钮 -->
+        <div class="btn play-pause icon-jiediankaishi iconfont"></div>
+        <!-- 下一首按钮 -->
+        <div class="btn next iconfont">&#xe602;</div>
+      </div>
+    </div>
+  </div>
+  <script src="musicPlayer-master/js/jquery-3.4.1.min.js"></script>
+  <script src="musicPlayer-master/js/index.js"></script>
+
+
+
+
+  <!--文章按钮-->
+  <div id="loading-btn">
+    <button id="btn" ><span class="btn-span">学习笔记</span></button>
+  </div>
+
+
+
+  <!--文章页面-->
+  <div class="posts-item">
+    <div class="item-thumbnail">
+      <a><img src="CG9.png"></a>
+    </div>
+    <div class="item-body">
+      <h4 class="h2-cc">
+        <a style="font-size: 0.1rem;">博客开始搭建,期待你的加入</a>
+      </h4>
+      <div class="meta-right">
+        <item class="meta-like2" style="font-size: 0.09rem;">12月1日</item>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="posts-item3">
+    <div class="item-thumbnail3">
+      <a><img src="CG11.jpg"></a>
+    </div>
+    <div class="item-body3">
+      <h4 class="h2-cc">
+        <a style="font-size: 0.1rem;">很高兴遇见你，世事纷飞复杂，相遇即是缘分，遇见你的缘分，正是恰如逆飞的流星般神奇</a>
+      </h4>
+      <div class="meta-right">
+        <item class="meta-like3" style="font-size: 0.09rem;">12月6日</item>
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+   
+
+ 
+<!--图片集-->
+<div class="img-box">
+  <div class="img-box-item">
+    <div class="img-box-item-img">
+      <img src="CG1.png">
+    </div>
+  </div>
+  
+  <div class="img-box-item2">
+    <div class="img-box-item-img">
+      <img src="images/20241208084610.jpg">
+    </div>
+
+  </div>
+  <div class="img-box-item3">
+    <div class="img-box-item-img">
+      <img src="images/20241208102336.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item4">
+    <div class="img-box-item-img">
+      <img src="images/202412081023331.jpg">
+    </div>
+  </div>
+  
+  <div class="img-box-item5">
+    <div class="img-box-item-img">
+      <img src="images/20241210075536.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item6">
+    <div class="img-box-item-img">
+      <img src="images/202412081023391.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item7">
+    <div class="img-box-item-img">
+      <img src="images/微信图片_20241208103358.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item8">
+    <div class="img-box-item-img">
+      <img src="images/微信图片_202412100755401.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item9">
+    <div class="img-box-item-img">
+      <img src="images/微信图片_202412100755373.jpg">
+    </div>
+  </div>
+
+  <div class="img-box-item10">
+    <div class="img-box-item-img">
+      <img src="images/微信图片_202412100755361.jpg">
+    </div>
+  </div>
+
+</div>
+
+<!--右键菜单事件-->
+<div id="menus">
+  <div data-id="a">复制(ctrl + c)</div>
+  <div data-id="b">黏贴</div>
+  <div data-id="c">音乐播放</div>
+</div>
+
+<hr id="sss">
+<!--留言模块-->
+
+<div class="wrapper">
+  <i class="avatar"></i>
+  <textarea id="tx" placeholder="发一条友善的评论" rows="2" maxlength="300" style="width: 10rem;font-size: 0.09rem;"></textarea>
+  <!--这里有一个文本域，限制了最大的输入数-->
+  <button id="btns" style="font-size: 0.09rem;">发布</button>
+</div>
+<div class="wrapper">
+  <span class="total" style="font-size: 0.09rem;">0/200字</span>
+</div>
+<div class="lists">
+
+</div>
+
+<!--学习笔记-->
+<div id="demo"></div>
+<!--视图-->
+<div class="container2">
+  <div class="panel active" style="background-image:url('CG1.png')">
+      <h3>11111111111</h3>
+  </div>
+  <div class="panel active" style="background-image:url('CG4.png')">
+      <h3>11111111111</h3>
+  </div>
+  <div class="panel active" style="background-image:url('CG5.png')">
+      <h3>11111111111</h3>
+  </div>
+  <div class="panel active" style="background-image:url('CG7.png')">
+      <h3>11111111111</h3>
+  </div>
+  <div class="panel active" style="background-image:url('CG8.png')">
+      <h3>11111111111</h3>
+  </div>
+</div>
+
+
+</body>
+
+
+
+
+<!--雪花-->
+<script src="http://www.bokequ.com/winter/templets/xq/js/snowy.js"></script>
+<script src="http://www.bokequ.com/blog/14/js/Snow.js"></script>
+
+
+
+
+
+<script src="网页移动端适应.js"></script>
+<script src="swiper-bundle.min.js"></script>
+<script>
+  //首页滑动效果的js和插件
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 'auto',
+    paginationClickable: true,
+    spaceBetween: 30
+  });
+
+  var mySwiper = new Swiper('.swiper-container', {
+    autoplay: true,//等同于以下设置
+    autoplay: {
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    },
+  });
+
+
+
+</script>
+
+<!--打字插件导入-->
+<!-- Load library from the CDN -->
+<script src="typed.js"></script>
+
+<!-- Setup and start animation! -->
+<script>
+  
+
+
+  var typed = new Typed('#element', {
+    strings: ['Xiao ^1000 hai', "I'm Xiaohai", 'Life is big and', '^1000 you are beautiful', 'hello,^1000 Gzhu', 'Xiao ^1000 hai', "I'm Xiaohai", 'Life is big and', '^1000 you are beautiful', 'hello,^1000 Gzhu'],
+    typeSpeed: 50,
+  });
+
+  //头像跳转
+  const img = document.querySelector('.tuoxiang')
+  const love = document.querySelector('.mo-textarea')
+
+  img.addEventListener('click', function () {
+    console.log('love')
+  })
+
+
+  //高德地图
+</script>
+
+<script type="text/javascript">
+  window._AMapSecurityConfig = {
+    securityJsCode: "8f4fd72957844987c5c6adc06985fde7",
+  };
+</script>
+<script src="https://webapi.amap.com/loader.js"></script>
+<script type="text/javascript">
+  AMapLoader.load({
+    key: "	332acef351842d73cec2f9978a638915", //申请好的Web端开发者key，调用 load 时必填
+    version: "2.0", //指定要加载的 JS API 的版本，缺省时默认为 1.4.15
+  })
+    .then((AMap) => {
+      //JS API 加载完成后获取AMap对象
+      const map = new AMap.Map("container", {
+        viewMode: '2D', //默认使用 2D 模式
+        zoom: 16, //地图级别
+        center: [113.265972, 23.148661], //地图中心点
+      });
+    })
+    .catch((e) => {
+      console.error(e); //加载错误提示
+    });
+  //运动组件
+
+
+
+</script>
+
+
+<script>
+  //页面卷动
+  const ul = document.querySelector('.list')
+  ul.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      if (e.target.dataset.id === '1') {
+        let scrollTop = window.pageYOffset;
+        let timer = setInterval(() => {
+          scrollTop -= 100;
+          window.scrollTo(0, scrollTop);
+          if (scrollTop <= 0) { clearInterval(timer) }
+        }, 20)
+        
+      }
+      else if (e.target.dataset.id === '2') { window.scrollTo(0, 830) }
+
+
+      
+      else if (e.target.dataset.id === '3') { window.scrollTo(0, 1680) }
+      else if (e.target.dataset.id === '4') { window.scrollTo(0, 2500) }
+      else if (e.target.dataset.id === '5') { window.scrollTo(0, 3620) }
+      else if (e.target.dataset.id === '6') { window.scrollTo(0, 4520) }
+    }
+  })
+
+  //页面改变
+  const list = document.querySelector('.main-list')
+
+
+  const time = setInterval(() => {
+    const scroll = window.scrollY || window.pageYOffset;
+    const swiper = document.querySelector('.swiper-main')
+    if (scroll < 740) {
+      list.style.display = "none";
+      swiper.style.left = '1rem'
+    }
+    else if (scroll >= 740) {
+      list.style.display = "inline";
+    }
+  }, 100)
+
+
+  const down = document.querySelector('.arrow-down')
+  down.addEventListener('click', function () {
+    window.scrollTo(0, 840)
+  })
+
+
+
+
+  //页面跳转
+  const posts = document.querySelector('.posts-item')
+  posts.addEventListener('click', function () {
+    window.location.href = 'wenzhang1.html'
+  })
+
+  const posts3 = document.querySelector('.posts-item3')
+  posts3.addEventListener('click', function () {
+    window.location.href = '足迹.html'
+  })
+
+
+
+  //修改右键
+  const menus = document.getElementById("menus");
+  menus.addEventListener("click", (e) => {
+    e.stopPropagation()
+    if (e.target.dataset.id === 'c') {
+      window.location.href = 'simple-web-music-player-master/index.html'
+    }
+  });
+  menus.addEventListener("contextmenu", (e) => { // 菜单要阻止默认事件冒泡
+    e.stopPropagation()
+    e.preventDefault();
+  });
+  document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    showMenu(e);
+  });
+  document.addEventListener("click", hideMenu, false); // 隐藏菜单
+  function showMenu(e) {
+    menus.style.top = `${e.clientY}px`;
+    menus.style.left = `${e.clientX}px`;
+    menus.style.display = "flex";
+  }
+  function hideMenu() {
+    menus.style.display = "none";
+  }
+  const menusChild = document.querySelectorAll("#menus div");
+  menusChild.forEach(item => {
+    item.onclick = (e) => {
+      console.log(e.target.dataset.id, '元素');
+      hideMenu()
+    }
+  })
+
+  //评论
+  //字数显示和文本域操作
+  const tx = document.querySelector('#tx')
+  const total = document.querySelector('.total')
+
+  tx.addEventListener('focus', function () {
+    total.style.opacity = 1
+  })//显示相关的数字，用这个方式
+  tx.addEventListener('blur', function () {
+    total.style.opacity = 0
+  })
+  tx.addEventListener('input', function () {
+    total.innerHTML = `${tx.value.length}/200字`
+
+
+  })
+  //按下回车发布评论
+  const item = document.querySelector('.item')
+  const text = document.querySelector('.text')
+  const lists = document.querySelector('.lists')
+  tx.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+      //不能用=，这个是赋值，这样搞，全都会对
+
+      if (tx.value.trim()) {
+        //消除空的影响，且输入的为空，就直接隐式转换成flase
+        //要做一个自增加的形式，不然新的会覆盖旧的
+        const html = lists.innerHTML
+        lists.innerHTML = html + `  <div class="item" >
+    <i class="avatar"></i>
+    <div class="info">
+      <p class="name">小海</p>
+      <p class="text">${tx.value}</p>
+      <p class="time">2022-10-10 20:29:21</p>
+    </div>
+  </div>`}
+      tx.value = ''
+    }
+    total.innerHTML = `0/200字`
+  })
+
+const btn=document.querySelector('#btns')
+btn.addEventListener('click',function(){
+  if(tx.value.trim()){
+    const html = lists.innerHTML
+    lists.innerHTML = html + `  <div class="item" >
+    <i class="avatar"></i>
+    <div class="info">
+      <p class="name">小海</p>
+      <p class="text">${tx.value}</p>
+      <p class="time">2022-10-10 20:29:21</p>
+    </div>
+    </div>`
+    tx.value = ''
+  }
+      total.innerHTML = `0/200字`
+})
+
+//笔记跳转
+const LoadingBtn = document.getElementById("loading-btn");
+  LoadingBtn.addEventListener("click", (e) => {
+    e.stopPropagation()
+    
+      window.location.href = 'https://ourcx.github.io/word/#/ch1/c1'
+    
+  });
+
+//解决轮播图无法正常运行，通过修改缩放大小来修正
+window.addEventListener('load', function() {
+    
+document.body.style.zoom = '102%';
+setTimeout(() => document.body.style.zoom = '100%', 1000)
+
+});
+
+
+//窗栏
+const panels=document.querySelectorAll('.panel');
+panels.forEach(panel=>{
+    panel.addEventListener('mouseover',()=>{
+        removeActiveClasses();
+        panel.classList.add('active');
+    })
+})
+
+function removeActiveClasses(){
+    panels.forEach(panel=>{
+        panel.classList.remove('active');
+    })
+}
+
+panels.forEach(panel=>{
+    panel.addEventListener('mouseout',()=>{
+        removeActiveClasses();
+        panel.classList.remove('active');
+    })
+})
+</script>
+<!--笔记区域-->
+<script src="pdf/js/pdf.js" type="text/javascript" charset="utf-8"></script>
+<script src="pdf/js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+<script src="pdf/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="pdf/js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+
+    
+const pdfh5 = new Pdfh5('#demo', {
+  pdfurl: "pdf/axios.html"
+});
+
+    
+
+
+</script>
+
+
+</html>

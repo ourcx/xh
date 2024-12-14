@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pdfh5.css" />
+
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+
+
+<script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+
+    
+const pdfh5 = new Pdfh5('#demo', {
+  pdfurl: "./Apis学习（js对象）.pdf"
+});
+   
+
+</script>
+</html>

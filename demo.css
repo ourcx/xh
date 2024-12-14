@@ -1,0 +1,41 @@
+/**
+ *
+ *
+ */
+
+
+
+  .loader {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 1 auto;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 25%;
+      max-width: 25%;
+      height: 0px;
+      align-items: center;
+      justify-content: center;
+      perspective: 3.602rem; }
+.loader .tooltip {
+        -webkit-transition: all 200ms ease;
+        transition: all 200ms ease;
+        -webkit-transform: translate3d(-50%, 0%, 0);
+        transform: translate3d(-50%, 0%, 0);
+        -webkit-transform-origin: 0 0.0672rem;
+        transform-origin: 0 0.0672rem;
+        background-color: #fff;
+        border-radius:0.0269rem;
+        color: #2f2f2f;
+        display: block;
+        font-size: 0.0941rem;
+        line-height: 1;
+        left: 50%;
+        opacity: 0;
+        padding: 0.0269rem 0.1344rem;
+        position: absolute;
+        text-align: left;
+        top: 80%;
+        pointer-events: none;
+        white-space: nowrap; }

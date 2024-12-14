@@ -1,0 +1,989 @@
+/**先不要写，拿时间把移动端适配做好，不然搞不了**/
+/*要去对文字做一个适配*/
+:root{
+  font-family: '华文楷体';
+  
+}
+
+body {
+  background-image: url(bg.png);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-size: 100%;
+  font-size: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+
+}
+
+.list {
+  list-style-type: none;
+  width: 1.2rem;
+  margin: 0rem;
+  padding: 0rem;
+  background-color: rgba(165, 165, 165, 0.5);
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0%;
+  backdrop-filter: blur(50px);
+}
+
+.list li {
+  width: 100%;
+}
+
+.list li a {
+  display: block;
+  text-decoration: none;
+  padding: .1008rem .2016rem;
+  color: rgb(255, 255, 255);
+  margin: 20%;
+}
+
+.list li a:hover {
+  background-color: #555;
+  color: #000000;
+}
+
+#bottom {
+  bottom: 0%;
+  position: absolute;
+  width: 1.2rem;
+}
+
+
+/*首页*/
+.master {
+  position: absolute;
+  overflow: hidden;
+  margin: 1rem auto;
+  width: 1200px;
+  height: 900px;
+  left: 1.3441rem;
+  margin-top: 0%;
+}
+
+
+
+.master-img {
+  background-color: rgba(165, 165, 165, 0.5);
+  display: flex;
+  width: 4800px;
+  height: 900px;
+  position: absolute;
+  margin-top: auto;
+  backdrop-filter: blur(50px);
+
+}
+
+.master-img img {
+  size: 6rem
+}
+
+/*首页滑动效果的css*/
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.swiper-main {
+  background-color: rgba(165, 165, 165, 0.5);
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  position: absolute;
+  left: 1.5rem;
+  width: 5rem;
+  top: 0rem;
+  backdrop-filter: blur(50px);
+
+}
+
+.swiper-container {
+  width: 7rem;
+  height: 4.2rem;
+  position: absolute;
+  overflow: hidden;
+  left: 0.48rem;
+  top: 0.1rem;
+  background-origin: content-box;
+  background-color: rgba(165, 165, 165, 0.5);
+  margin: .0672rem .0672rem;
+  backdrop-filter: blur(50px);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: .121rem;
+  background: #fff;
+  width: 80%;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img{
+  width: 7.5rem;
+}
+
+.swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.swiper-slide:nth-child(3n) {
+  width: 40%;
+}
+
+.swiper-container .swiper-wrapper div img {
+  width: 100%;
+  height: 100%;
+  size: 2.0161rem;
+}
+
+/*浮动箭头跳转*/
+@keyframes arrow {
+  from {
+    height: 5.2rem;
+  }
+
+  to {
+    height: 5.1rem;
+  }
+}
+
+.arrow-container {
+  position: absolute;
+  width: 100%;
+  height: 5.2rem;
+  overflow: hidden;
+  animation: arrow 2s;
+  animation-direction: alternate;
+  animation-iteration-count: 500;
+}
+
+.arrow-down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid rgb(99, 99, 99);
+}
+
+.arrow-up:hover,
+.arrow-down:hover {
+  opacity: 0.6;
+}
+
+
+
+/*公告栏搭建*/
+.word {
+  top: 5.7rem;
+  height: 2.7rem;
+  background-color: rgba(165, 165, 165, 0.5);
+  position: absolute;
+  left: 1.5rem;
+  width: 5rem;
+  backdrop-filter: blur(50px);
+  overflow: hidden;
+}
+
+/*创建动画*/
+@keyframes identifier {
+  from {
+    background-color: rgba(165, 165, 165, 0.5);
+  }
+
+  to {
+    background-color: #555;
+  }
+
+  from {
+    border-radius: 0%;
+  }
+
+  to {
+    border-radius: .1008rem;
+  }
+
+  form {
+    color: black;
+  }
+
+  to {
+    color: #ffffff;
+  }
+}
+
+.word div ol{
+  position: absolute;
+  left: 0.1rem;
+  top: 0.3rem;
+  bottom: 0.02rem;
+}
+
+
+.word div ol li {
+  width: 1.5rem;
+  left: 0.08rem;
+  transition: width 2s;
+  position: relative;
+  border-left: 0.02rem #ff5964 solid;
+  list-style: none;
+  overflow: visible;
+  margin-left: -0.25rem;
+}
+
+
+.word div ol li:hover {
+  animation: identifier 2s;
+  animation-direction: alternate;
+  animation-iteration-count: 1000;
+}
+
+.word div ol li:hover {
+  width: 4.5rem;
+}
+
+/*字体书写样式，xiaohai*/
+#element {
+  top: 5.7rem;
+  left: 6.5rem;
+  position: absolute;
+  width: 3rem;
+  height: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  line-height: 0.3rem;
+  font-size: 0.4rem;
+  font-family: Papyrus
+}
+
+/*小头像的东西*/
+.writer {
+  margin: 0.0672rem auto;
+  position: absolute;
+  left: 7.56rem;
+  top: 6.28rem;
+}
+
+.writer img {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+
+
+/*情书*/
+.love {
+
+  position: absolute;
+  left: 5.5rem;
+  width: 4rem;
+  top: 8.3rem;
+}
+
+#love {
+  width: 4rem;
+  height: 2.2rem;
+}
+
+textarea {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  background-image: none;
+  background-color: transparent;
+  font-size: inherit;
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+
+}
+
+textarea:focus {
+  outline: none;
+}
+
+/* 自定义样式 */
+.mo-textarea {
+  display: inline-block;
+  resize: vertical;
+  padding: 0.0336rem 0.1008rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  color: #000000;
+  border-radius: 0.0269rem;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+
+/*地图组件*/
+#container {
+  top: 8.4rem;
+  width: 4rem;
+  height: 2.5rem;
+  left: 1.5rem;
+  font-size: 0.3rem;
+}
+
+.amap-copyright{
+  font-size: 0.15rem;
+  color: rgba(red, green, blue,0);
+  top: 100rem;
+}
+
+.amap-logo{
+  top: 100rem;
+}
+
+/*按钮*/
+#loading-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 24.5rem;
+  left: 1.5rem;
+}
+
+
+#btn {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.1344rem;
+  padding: 0.1008rem 0.336rem;
+  position: relative;
+}
+
+#btn:before {
+  transition: all 0.8s cubic-bezier(0.7, -0.5, 0.2, 2);
+  content: '';
+  width: 1%;
+  height: 100%;
+  background: #ff5964;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#btn span {
+  mix-blend-mode: darken;
+}
+
+#btn:hover:before {
+  background: #ff5964;
+  width: 100%;
+}
+
+
+
+
+/* 文章列表 */
+/* 1*/
+.posts-item {
+  position: absolute;
+  top: 13rem;
+  background-color: rgba(165, 165, 165, 0.5);
+  left: 1.5rem;
+  width: 1.3rem;
+  height: 1.7rem;
+  box-sizing: border-box;
+  border-radius: 0.03rem;
+  backdrop-filter: blur(50px);
+  
+}
+
+.posts-item .item-thumbnail a img {
+  position: relative;
+  width: 1.3rem;
+  height: 1rem;
+  border-radius: 0.03rem;
+}
+
+.posts-item .item-body div .meta-like2 {
+  font-size: 0.1rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 0rem;
+  color: #d7d7d7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+
+.posts-item .item-body .h2-cc a {
+  position: absolute;
+  top: 1.01rem;
+  left: 0.03rem;
+ 
+}
+
+@keyframes box {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: 0.018rem 0.018rem 0.03rem 0.012rem rgba(0, 0, 0, 0.2)
+  }
+
+  from {
+    margin-top: 0rem;
+  }
+
+  to {
+    margin-top: -0.05rem;
+  }
+}
+
+
+
+.posts-item:hover {
+  animation: box 1s;
+  animation-fill-mode: forwards
+}
+
+.posts-item .item-body .h2-cc a:hover {
+  color: rgb(146, 184, 255);
+}
+
+/*2*/
+
+
+
+
+.posts-item3 {
+  position: absolute;
+  top: 13rem;
+  background-color: rgba(165, 165, 165, 0.5);
+  left: 3.5rem;
+  /*以0.7为分界线*/
+  width: 1.3rem;
+  height: 1.7rem;
+  border-radius: 0.03rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  backdrop-filter: blur(50px);
+}
+
+.posts-item3 .item-thumbnail3 a img {
+  position: relative;
+  width: 1.3rem;
+  height: 1rem;
+  border-radius: 0.03rem;
+}
+
+.posts-item3 .item-body3 div .meta-like3 {
+  font-size: 0.1rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 0rem;
+  color: #d7d7d7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.posts-item3 .item-body3 .h2-cc a {
+  position: absolute;
+  top: 1.01rem;
+  left: 0.04rem;
+  overflow: hidden;
+}
+
+.posts-item3:hover {
+  animation: box 1s;
+  animation-fill-mode: forwards
+}
+
+.posts-item3 .item-body3 .h2-cc a:hover {
+  color: rgb(146, 184, 255);
+}
+
+
+/*图片展示*/
+.img-box {
+  position: absolute;
+  top: 17rem;
+  height: 3rem;
+
+  left: 2.4rem;
+  padding: 2rem;
+
+}
+
+.img-box .img-box-item {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  left: -2.2rem;
+  top: -2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+/*2*/
+.img-box .img-box-item img {
+  width: 1.5rem;
+  height: 1.2rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item2 {
+  width: 1.7rem;
+  height: 2.0rem;
+  position: relative;
+  left: -0.4rem;
+  top: -3.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+/*3*/
+.img-box .img-box-item2 img {
+  width: 1.7rem;
+  height: 1.6rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item2 img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item3 {
+  width: 1.5rem;
+  height: 1.6rem;
+  position: relative;
+  left: 1.8rem;
+  top: -5.4rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item3 img {
+  width: 1.5rem;
+  height: 1.3rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item3 img:hover {
+  transform: scale(1.4);
+}
+
+
+.img-box .img-box-item4 {
+  width: 1.5rem;
+  height: 1.6rem;
+  position: relative;
+  left: -1.9rem;
+  top: -5.6rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item4 img {
+  width: 1.5rem;
+  height: 1.3rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item4 img:hover {
+  transform: scale(1.4);
+}
+
+
+.img-box .img-box-item5 {
+  width: 1.7rem;
+  height: 1.8rem;
+  position: relative;
+  left: -0.4rem;
+  top: -6.7rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item5 img {
+  width: 1.7rem;
+  height: 1.4rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item5 img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item6 {
+  width: 1.9rem;
+  height: 1.8rem;
+  position: relative;
+  left: 1.3rem;
+  top: -8.8rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item6 img {
+  width: 1.9rem;
+  height: 1.4rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item6 img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item7 {
+  width: 1.9rem;
+  height: 1.8rem;
+  position: relative;
+  left: 2rem;
+  top: -8.8rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item7 img {
+  width: 1.9rem;
+  height: 1.4rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item7 img:hover {
+  transform: scale(1.4);
+}
+
+
+.img-box .img-box-item8 {
+  width: 1.9rem;
+  height: 1.8rem;
+  position: relative;
+  left: -2.3rem;
+  top: -11rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item8 img {
+  width: 1.9rem;
+  height: 1.3rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item8 img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item9 {
+  width: 2.3rem;
+  height: 1.9rem;
+  position: relative;
+  left: -0.3rem;
+  top: -12.1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item9 img {
+  width: 2.3rem;
+  height: 1.5rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item9 img:hover {
+  transform: scale(1.4);
+}
+
+.img-box .img-box-item10 {
+  width: 2.2rem;
+  height: 1.9rem;
+  position: relative;
+  left: -2.5rem;
+  top: -12.9rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  place-items: center;
+  overflow: hidden;
+}
+
+.img-box .img-box-item10 img {
+  width: 2.2rem;
+  height: 1.5rem;
+  transition: all 0.6s;
+}
+
+.img-box .img-box-item10 img:hover {
+  transform: scale(1.4);
+}
+/*菜单栏*/
+#menus {
+  width: 140px;
+  padding: 3px 5px;
+  background-color: #ffffff;
+  display: none;
+  /* display: flex; */
+  flex-wrap: wrap;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #878787;
+  position: fixed;
+  user-select: none;
+  z-index: 10001;
+}
+
+#menus div {
+  display: flex;
+  align-items: center;
+  margin: 2px 0px;
+  cursor: pointer;
+  width: 100%;
+  min-height: 26px;
+  padding: 0px 8px;
+  font-size: 14px;
+  border-bottom: rgba(135, 135, 135, 0.3) 1px solid;
+  z-index: 10001;
+}
+
+#menus div:hover {
+  background-color: #e8e8e9;
+  z-index: 10001;
+}
+
+
+
+/*下滑线区域*/
+hr {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #ffffff inset;
+  position: relative;
+  top: 13.3rem;
+  width: 8rem;
+  left: 0.3rem;
+
+}
+
+#sss{
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #ffffff inset;
+  position: relative;
+  top: 21.5rem;
+  width: 8rem;
+  left: 0.3rem;
+}
+
+/*文字评论模块*/
+
+.wrapper {
+  min-width: 0rem;
+  max-width: 7.333333333333333rem;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 35rem;
+  left: 1.5rem;
+  padding-bottom: 0.3rem;
+  
+}
+
+.wrapper span {
+  position: absolute;
+  left: 6.25rem;
+}
+
+
+
+.avatar {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(CG7.png) no-repeat center / cover;
+  margin-right: 0.13333333333333333rem;
+}
+
+.wrapper textarea {
+  outline: none;
+  border-color: transparent;
+  resize: none;
+  background: #f5f5f5;
+  border-radius: 0.02666666666666667rem;
+  flex: 1;
+  padding: 0.06666666666666667rem;
+  transition: all 0.5s;
+  height: 0.2rem;
+}
+
+/*这里是把焦点到文本域，使文本域扩大*/
+.wrapper textarea:focus {
+  border-color: #e4e4e4;
+  background: #fff;
+  height: 0.3333333333333333rem;
+}
+
+.wrapper button {
+  background: #00aeec;
+  color: #fff;
+  border: none;
+  border-radius: 0.02666666666666667rem;
+  margin-left: 0.06666666666666667rem;
+  width: 0.4666666666666667rem;
+  cursor: pointer;
+}
+
+.wrapper .total {
+  margin-right: -3.4rem;
+  color: #999;
+  margin-top: 0.26666666666666666rem;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.lists {
+  min-width: 2.6666666666666665rem;
+  max-width: 10.666666666666666rem;
+  display: flex;
+  position: absolute;
+  top: 35.5rem;
+  left: 1.96rem;
+  display: inline;
+  width: 6.35rem;
+
+}
+
+.lists.avatar {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(CG7.png) no-repeat center / cover;
+  margin-right: 0.13333333333333333rem;
+}
+
+.lists .item {
+  width: 100%;
+  display: flex;
+  padding-bottom: 0.1rem;
+}
+
+.lists .item .info {
+  flex: 1;
+  border-bottom: 0.006666666666666667rem dashed #e4e4e4;
+  padding-bottom: 0.06666666666666667rem;
+  padding-right: 3rem;
+}
+
+.lists .item p {
+  margin: 0;
+}
+
+.lists .item .name {
+  color: #FB7299;
+  font-size: 0.09333333333333334rem;
+  font-weight: bold;
+}
+
+.lists .item .text {
+  color: #e4e4e4; ;
+  padding: 0.06666666666666667rem 0;
+}
+
+.lists .item .time {
+  color: #999;
+  font-size: 0.08rem;
+}
+
+
+/* 设置窗户栏 */
+  * {
+        box-sizing: border-box,
+    }
+
+    body {
+   
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+    }
+
+    .container2 {
+        display: flex;
+        width: 7rem;
+        position: relative;
+        top: 22.3rem;
+        height: 4.5rem;
+        left: 1.8rem;
+    }
+
+    .panel {
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        border-radius: 0.3333333333333333rem;
+        color: ■#fff;
+        cursor: pointer;
+        /*鼠标显示手 */
+        flex: 0.5;
+        /*均分 */
+        margin: 0.06666666666666667rem;
+        position: relative;
+        transition: all 700ms ease-in;
+        /*动画快速 */
+        height: 4.5rem;
+    }
+
+    .panel h3 {
+        font-size: 0.16rem;
+        position: absolute;
+        bottom: 0.13333333333333333rem;
+        left: 0.13333333333333333rem;
+        margin: 0;
+        opacity: 0;
+    }
+
+
+    .panel.active {
+        flex: 5;/*均分,布局5，占五分那么大 */
+    }
+
+    .panel .active h3 {
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.4;
+    }
