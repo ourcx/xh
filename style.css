@@ -16,7 +16,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
-  overflow: hidden;
+
 }
 
 .list {
@@ -816,10 +816,10 @@ hr {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  top: 35rem;
+  top: 37rem;
   left: 1.5rem;
   padding-bottom: 0.3rem;
-  
+  z-index: 10001;
 }
 
 .wrapper span {
@@ -880,11 +880,11 @@ hr {
   max-width: 10.666666666666666rem;
   display: flex;
   position: absolute;
-  top: 35.5rem;
+  top: 37.5rem;
   left: 1.96rem;
   display: inline;
   width: 6.35rem;
-
+  z-index: 10001;
 }
 
 .lists.avatar {
@@ -922,6 +922,8 @@ hr {
 .lists .item .text {
   color: #e4e4e4; ;
   padding: 0.06666666666666667rem 0;
+  position: relative;
+  top: 0.04rem;
 }
 
 .lists .item .time {
