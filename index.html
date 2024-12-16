@@ -392,12 +392,13 @@
 
 
 <!-- 页尾栏 -->
+ <!-- 填充网站部署时间，小东西，随机名言api -->
 <div class="end">
   <div class="tit">
-    <h2 class="RunTime"> 运行时长:1天 </h2>
+    <h2 class="RunTime"> </h2>
     <h2 class="RunMster"> @小海</h2>
   </div>
-  <div class="wordd"></div>
+  <div class="wordds"> <h2 class="wordd" style="  text-align: center;color: rgb(255, 255, 255);"></h2></div>
 </div>
 
 
@@ -687,20 +688,79 @@ panels.forEach(panel=>{
         panel.classList.remove('active');
     })
 })
+
+//写一个时间的函数
+function show(){
+  const RunTime=document.querySelector('.RunTime')
+			//获取目的日期
+			let myyear=2024
+			let mymonth=12
+			let myday=1
+			let myhour=19
+			let myminute=30
+			let mysecond=30
+			let time=Number(new Date(myyear,mymonth,myday,myhour,myminute,mysecond));
+			// let time=new Date(myyear,mymonth,myday,myhour,myminute,mysecond).getTime();
+			//获取当前时间
+			let nowTime=Date.now();
+			// let nowTime=new Date().getTime();
+			//获取时间差
+			let timediff=Math.round((time-nowTime)/1000);
+			//获取还剩多少天
+			let day=parseInt(timediff/3600/24);
+			//获取还剩多少小时
+			let hour=parseInt(timediff/3600%24);
+			//获取还剩多少分钟
+			let minute=parseInt(timediff/60%60);
+			//获取还剩多少秒
+			let second=timediff%60;
+			//输出还剩多少时间
+		  let inn=`网站已运行${day}天，${hour}小时，${minute}分钟，${second}秒`
+      RunTime.innerHTML=inn
+			setTimeout(show,1000);
+			if(timediff==0){return;}
+}
+
+show()
+//写一个距离的函数（获取访问ip和我的ip比对？）
+
+
+
+//写一个浪漫点的东西
+
+
+//https://api.52vmy.cn/api/wl/yan/dm?type=text
+//用axios写一个拿这个数据的东西
+const request = new XMLHttpRequest()
+const wordd=document.querySelector('.wordd')
+request.open('GET', 'https://api.52vmy.cn/api/wl/yan/dm?type=tex', true)
+request.onload = function () {
+  // Begin accessing JSON data here
+  const data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    wordd.innerHTML=data.content
+  } else {
+    console.log('error')
+  }
+}
+
+request.send()
 </script>
 <!--笔记区域-->
 <script src="pdf/js/pdf.js" type="text/javascript" charset="utf-8"></script>
 <script src="pdf/js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
 <script src="pdf/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="pdf/js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
-
+<script src="pdf/axios.html" type="text/javascript" charset="utf-8"></script>
 <script>
 
     
 const pdfh5 = new Pdfh5('#demo', {
-  pdfurl: "pdf/axios.html"
+  pdfurl: "pdf/axios接口.pdf"
 });
 
+//计算运行时间的js代码
     
 
 
