@@ -697,11 +697,13 @@ panels.forEach(panel=>{
 function show(){
   const RunTime=document.querySelector('.RunTime')
 			//获取目的日期
-			let time=Number(new Date(2024,12,1,19,30,30));
+			let time=Number(new Date("2024-12-1 19:00:00"));
 			// let time=new Date(myyear,mymonth,myday,myhour,myminute,mysecond).getTime();
 			//获取当前时间 
-			let nowTime=Date.now();
+			let nowTime=new Date();
 			// let nowTime=new Date().getTime();
+			//获取时间差
+			let timediff=Math.round((nowTime-time)/1000);
 			//获取时间差
 			let timediff=Math.round((-nowTime+time)/1000);
 			//获取还剩多少天
