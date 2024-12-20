@@ -704,21 +704,14 @@ panels.forEach(panel=>{
 function show(){
   const RunTime=document.querySelector('.RunTime')
 			//获取目的日期
-<<<<<<< HEAD
-			let time=Number(new Date("2024-12-1 00:00:00"));
-=======
 			let time=Number(new Date("2024-12-1 19:00:00"));
->>>>>>> e099a7a2d3208e31e83225719409b83adb769af1
 			// let time=new Date(myyear,mymonth,myday,myhour,myminute,mysecond).getTime();
 			//获取当前时间 
 			let nowTime=new Date();
 			// let nowTime=new Date().getTime();
 			//获取时间差
 			let timediff=Math.round((nowTime-time)/1000);
-<<<<<<< HEAD
-=======
 			//获取时间差
->>>>>>> e099a7a2d3208e31e83225719409b83adb769af1
 			//获取还剩多少天
 			let day=parseInt(timediff/3600/24);
 			//获取还剩多少小时
