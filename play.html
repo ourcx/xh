@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>游戏</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: '华文楷体';
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        background-color: #111;
+    }
+    h2{
+        color: #fff;
+        font-size: 12em;
+        position: absolute;
+    }
+    h4{
+        color: #fff;
+        font-size: 2em;
+        position: absolute;
+        bottom: 100px;
+    }
+    .container{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 10001;
+    }
+    
+
+    .container .box{
+        width: 50px;
+        height: 50px;
+        background-color: #222;
+        border: 1px solid #000;
+    }
+
+    .container .box.active{
+        background-color: #0f0;
+        box-shadow: 0 0 10px #0f05,
+                    0 0 30px #0f05,
+                    0 0 80px #0f05;
+        animation: animate 2s linear forwards;
+ 
+    }
+
+
+    @keyframes animate{
+        from{
+            transform: translateY(0) rotate(0deg);
+          
+        }
+        to{
+            transform: translateY(100vh) rotate(360deg);
+       
+        }
+    }
+
+</style>
+<body>
+    <h2>19岁!生日快乐</h2>
+    <h4>我喜欢你</h4>
+    <div class="container"></div>
+    <canvas id="canvas">你的浏览器不支持canvas</canvas>
+</body>
+
+<script>
+    let container=document.querySelector('.container')
+    let count=1600
+    for (let i = 0;i<count;i++){
+        let box =document.createElement("div")
+        box.className='box'
+        container.appendChild(box)
+    }
+    let box =document.querySelectorAll('.box')
+    for(let i =0;i<box.length;i++){
+        box[i].addEventListener('mouseover',() =>{
+            box[i].classList.add('active')
+            box[i].style.animationduration=Math.random()*3+1+'s'
+        })
+    }
+
+</script>
+
+
+<script>
+    let height = window.innerHeight
+let width = window.innerWidth
+
+var ctx
+var meteorArr = [
+  { x: width / 6, y: -height / 10, length: height / 5, r: 3, vx: 5, vy: 35, color: '#fff' },
+]
+
+window.onload = () => {
+  console.log('要下流星雨了')
+
+  let canvas = document.querySelector('#canvas')
+  let context = canvas.getContext('2d')
+  ctx = context
+  canvas.height = height
+  canvas.width = width
+  canvas.style.position = 'absolute'
+
+  draw()
+}
+
+function draw() {
+  ctx.clearRect(0, 0, width, height) // 清空上一幕
+
+  ctx.save(); // 保存状态
+
+  ctx.rotate(-20 * Math.PI / 180) // 旋转画布
+
+  meteorArr.map((item, index) => {
+
+    // 绘画
+    ctx.beginPath(); //开始路径
+    ctx.arc(item.x, item.y, item.r, 0, Math.PI, false);
+    ctx.lineTo(item.x, item.y - item.length);
+    ctx.closePath()
+    ctx.fillStyle = item.color;
+    ctx.fill();
+
+    // 渲染完一颗星星，然后处理数据，计算下一帧的位置
+    // 如果超出边界，删除这课星星
+    if (meteorArr[index].x > width + 100 || meteorArr[index].y > height + meteorArr[index].length * 2) {
+      meteorArr.splice(index, 1)
+    } else {
+      meteorArr[index].x += item.vx
+      meteorArr[index].y += item.vy
+    }
+
+  })
+
+  // 控制流星数量
+  if (meteorArr.length > 100) {
+
+  } else {
+    let random = Math.random()
+    if (random > 0.5) {
+      meteorArr.push(createStart())
+    } else {
+
+    }
+  }
+
+  ctx.restore(); // 恢复状态
+
+  window.requestAnimationFrame(draw)
+} 
+
+// 创建星星
+function createStart() {
+  let random = Math.random()
+  let random2 = Math.random()
+  let vx = random * 1 + 1
+  let obj = {
+    x: random * width - height / 4,
+    y: random * -200,
+    length: random2 * 50 + 200,
+    r: random2 * 6,
+    vx: vx,
+    vy: vx * 7,
+    color: 'rgba(255,255,255,0.7)'
+  }
+  return obj
+}
+</script>
+</html>
