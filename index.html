@@ -403,6 +403,7 @@
   <div data-id="b">黏贴</div>
   <div data-id="c">音乐播放</div>
   <div data-id="d">小游戏</div>
+  <div data-id="e">生日</div>
 </div>
 
 <hr id="sss">
@@ -630,6 +631,15 @@
       window.location.href = 'play.html'
     }
   });
+  menus.addEventListener("click", (e) => {
+    e.stopPropagation('play.html')
+    if (e.target.dataset.id === 'e') {
+      window.location.href = '生日.html'
+    }
+  });
+ 
+
+
   menus.addEventListener("contextmenu", (e) => { // 菜单要阻止默认事件冒泡
     e.stopPropagation()
     e.preventDefault();
