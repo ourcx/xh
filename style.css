@@ -67,6 +67,7 @@ body {
 
 .list li {
   width: 100%;
+  cursor: pointer;
 }
 
 .list li a {
@@ -79,7 +80,7 @@ body {
 
 .list li a:hover {
   background-color: #555;
-  color: #000000;
+  color:  #00aeec;
 }
 
 #bottom {
@@ -131,7 +132,7 @@ body {
   position: absolute;
   left: 1.5rem;
   width: 5rem;
-  top: 0rem;
+  top: 0.5rem;
   backdrop-filter: blur(50px);
 
 }
@@ -207,6 +208,7 @@ body {
   animation: arrow 2s;
   animation-direction: alternate;
   animation-iteration-count: 500;
+  top: 0.3rem;
 }
 
 .arrow-down {
@@ -259,11 +261,11 @@ body {
   }
 
   form {
-    color: black;
+    color: #00aeec;
   }
 
   to {
-    color: #ffffff;
+    color: #00aeec;
   }
 }
 
@@ -284,6 +286,7 @@ body {
   list-style: none;
   overflow: visible;
   margin-left: -0.25rem;
+  cursor: pointer;
 }
 
 
@@ -375,7 +378,7 @@ textarea:focus {
 
 /*地图组件*/
 #container {
-  top: 8.4rem;
+  top: 7.9rem;
   width: 4rem;
   height: 2.5rem;
   left: 1.5rem;
@@ -450,7 +453,7 @@ textarea:focus {
   box-sizing: border-box;
   border-radius: 0.03rem;
   backdrop-filter: blur(50px);
-  
+  cursor: pointer;
 }
 
 .posts-item .item-thumbnail a img {
@@ -503,7 +506,7 @@ textarea:focus {
 }
 
 .posts-item .item-body .h2-cc a:hover {
-  color: rgb(146, 184, 255);
+  color:  #00aeec;
 }
 
 /*2*/
@@ -523,6 +526,7 @@ textarea:focus {
   box-sizing: border-box;
   overflow: hidden;
   backdrop-filter: blur(50px);
+  cursor: pointer;
 }
 
 .posts-item3 .item-thumbnail3 a img {
@@ -554,9 +558,59 @@ textarea:focus {
 }
 
 .posts-item3 .item-body3 .h2-cc a:hover {
-  color: rgb(146, 184, 255);
+  color: #00aeec;
 }
 
+
+/* 3 */
+
+
+.posts-item4 {
+  position: absolute;
+  top: 13rem;
+  background-color: rgba(165, 165, 165, 0.5);
+  left: 5.5rem;
+  /*以0.7为分界线*/
+  width: 1.3rem;
+  height: 1.7rem;
+  border-radius: 0.03rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  backdrop-filter: blur(50px);
+  cursor: pointer;
+}
+
+.posts-item4 .item-thumbnail4 a img {
+  position: relative;
+  width: 1.3rem;
+  height: 1rem;
+  border-radius: 0.03rem;
+}
+
+.posts-item4 .item-body4 div .meta-like4 {
+  font-size: 0.1rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 0rem;
+  color: #d7d7d7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.posts-item4 .item-body4 .h2-cc a {
+  position: absolute;
+  top: 1.01rem;
+  left: 0.04rem;
+  overflow: hidden;
+}
+
+.posts-item4:hover {
+  animation: box 1s;
+  animation-fill-mode: forwards
+}
+
+.posts-item4 .item-body4 .h2-cc a:hover {
+  color: #00aeec;
+}
 
 /*图片展示*/
 .img-box {
@@ -984,7 +1038,7 @@ hr {
         position: relative;
         top: 22.3rem;
         height: 4.5rem;
-        left: 1.8rem;
+        left: 2rem;
     }
 
     .panel {
@@ -1021,4 +1075,26 @@ hr {
     .panel .active h3 {
         opacity: 1;
         transition: opacity 0.3s ease-in 0.4;
+    }
+/* 尾页 */
+    .end{
+      position: absolute;
+      top: 35.2rem;
+      width: 9rem;
+      padding-bottom: 1.5rem;
+      height: 1.5rem;
+      left: 1.2rem;
+      background-color: black;
+      background-color: rgba(165, 165, 165, 0.5);
+      backdrop-filter: blur(50px);
+    }
+    
+    .RunTime,.RunMster{
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+    
+    .wordd{
+      position: relative;
+      top: 0.4rem;
     }
