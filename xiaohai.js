@@ -106,6 +106,12 @@
       window.location.href = '生日.html'
     }
   });
+  menus.addEventListener("click", (e) => {
+    e.stopPropagation()
+    if (e.target.dataset.id === 'f') {
+      window.location.href = 'https://ourcx.github.io/plane-play/'
+    }
+  });
  
 
 
